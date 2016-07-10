@@ -16,28 +16,27 @@ features <- features[featuresMeanAndStdList,2]
 features <- gsub('-mean', 'Mean', features)
 # Replaces '-std' by 'Std' 
 features <- gsub('-std', 'Std', features)
-# Replaces any of these '-()' by '' 
-features <- gsub('[-()]', '', features)
-#features
 
 #### Load the datasets
 # Load the training set
 trainSet <- read.table(paste(datasetFolder,"/train/X_train.txt",sep=""))
 trainSet <- train[featuresMeanAndStdList]
-# Load the training labels
-trainLabels <- read.table(paste(datasetFolder,"/train/y_train.txt",sep=""))
-# Load the training subjects
-trainSubjects <- read.table(paste(datasetFolder,"/train/subject_train.txt",sep=""))
-# Links the subjects with the respective activity label and the training set
-train <- cbind(trainSubjects, trainLabels, trainSet)
-
 # Load the test set
 testSet <- read.table(paste(datasetFolder,"/test/X_test.txt",sep=""))
 testSet <- testSet[featuresMeanAndStdList]
+
+# Load the training labels
+trainLabels <- read.table(paste(datasetFolder,"/train/y_train.txt",sep=""))
 # Load the test labels
 testLabels <- read.table(paste(datasetFolder,"/test/y_test.txt",sep=""))
+
+# Load the training subjects
+trainSubjects <- read.table(paste(datasetFolder,"/train/subject_train.txt",sep=""))
 # Load the test subjects
 testSubjects <- read.table(paste(datasetFolder,"/test/subject_test.txt",sep=""))
+
+# Links the subjects with the respective activity label and the training set
+train <- cbind(trainSubjects, trainLabels, trainSet)
 # Links the subjects with the respective activity label and the test set
 test <- cbind(testSubjects, testLabels, testSet)
 
