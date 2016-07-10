@@ -2,17 +2,17 @@
 
 The script `run_analysis.R` performs the 5 steps of Coursera's Getting and Cleaning Data Course Project. The steps were written in the following order:
 
-* Step 1 - Extracts only the measurements on the mean and standard deviation for each measurement.
-  Activities labels and features are loaded first, then with regex only the features fields with 'mean' and 'std' in the name are extracted
+1. Extracts only the measurements on the mean and standard deviation for each measurement.
+  * *Activities labels and features are loaded first, then with regex only the features fields with 'mean' and 'std' in the name are extracted
 `gsub()` is used to replace '-mean' and '-std' for a more readable name
-* Step 2 - Merges the training and the test sets to create one data set.
-  After load the train and test datasets, they are merged in one whole dataset with the desired features (Mean and Std) with the respective subject and activity.
-* Step 3 - Appropriately labels the data set with descriptive variable names.
-  After merge the dataset, labels with the respectives activities are applied to the dataset.
-* Step 4 - Uses descriptive activity names to name the activities in the data set
-  Apply the features descriptive names using `colnames()` function.
-* Step 5 - From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-  Using the function `aggregate`, a tidy dataset is written with the average of each variable (feature) with its pair of subject and activity
+2. Merges the training and the test sets to create one data set.
+  * After load the train and test datasets, they are merged in one whole dataset with the desired features (Mean and Std) with the respective subject and activity.
+3. Appropriately labels the data set with descriptive variable names.
+  * After merge the dataset, labels with the respectives activities are applied to the dataset.
+4. Uses descriptive activity names to name the activities in the data set
+  * Apply the features descriptive names using `colnames()` function.
+5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+  * Using the function `aggregate`, a tidy dataset is written with the average of each variable (feature) with its pair of subject and activity
 
 # Variables
 
