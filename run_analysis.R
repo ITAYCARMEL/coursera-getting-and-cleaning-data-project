@@ -8,14 +8,10 @@ labels <- read.table(paste(datasetFolder,"/activity_labels.txt",sep=""))
 # Load features
 features <- read.table(paste(datasetFolder,"/features.txt",sep=""))
 
-#### Extract and rename mean and standard deviation for a more readable label
+#### Extract and rename mean and standard deviation
 # Search inside features any feature which has 'mean' or 'std' in its label (column 2) 
 featuresMeanAndStdList <- grep(".*mean.*|.*std.*", features[,2])
 features <- features[featuresMeanAndStdList,2]
-# Replaces '-mean' by 'Mean' 
-features <- gsub('-mean', 'Mean', features)
-# Replaces '-std' by 'Std' 
-features <- gsub('-std', 'Std', features)
 
 #### Load the datasets
 # Load the training set
