@@ -43,10 +43,10 @@ dataset <- rbind(train, test)
 colnames(dataset) <- c("Subject", "Activity", features)
 
 #### Labels (Item 3)
-# turn activities and replace the labels accordingly
+# turn activities into factor in order to use the aggregate function and replace the labels accordingly
 dataset$Activity <- factor(dataset$Activity, levels = labels[,1], labels = labels[,2])
-# turn subjects into factors
-dataset$Subject <- as.factor(dataset$Subject)
+# turn subjects into factors in order to use the aggregate function
+dataset$Subject <- factor(dataset$Subject)
 
 #### Tidy new dataset (Item 5)
 # Aggregate the mean value for each variable by its pair of subject and activity
