@@ -3,7 +3,7 @@
 The script `run_analysis.R` performs the 5 steps of Coursera's Getting and Cleaning Data Course Project. The steps were written in the following order:
 
 1. Extracts only the measurements on the mean and standard deviation for each measurement.
-  * *Activities labels and features are loaded first, then with regex only the features fields with 'mean' and 'std' in the name are extracted
+  * Activities labels and features are loaded first, then with regex only the features fields with 'mean' and 'std' in the name are extracted
 `gsub()` is used to replace '-mean' and '-std' for a more readable name
 2. Merges the training and the test sets to create one data set.
   * After load the train and test datasets, they are merged in one whole dataset with the desired features (Mean and Std) with the respective subject and activity.
